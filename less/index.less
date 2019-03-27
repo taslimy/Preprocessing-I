@@ -4,56 +4,266 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+// Misc
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+.active {
+  background: @main-color;
+  color: #111;
+}
+
+// Variables
+@main-color: #fd0;
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.5em;
+  letter-spacing: 0.01em;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  height: auto;
+}
+
+// Header
+header {
+  display: flex;
+  font-size: 1rem;
+  margin: 5rem 0rem 5rem 0rem;
+  nav a {
+    text-transform: uppercase;
+    border-bottom: 1px dashed @main-color;
+    font-weight: 300;
+    letter-spacing: 0rem;
+    padding: 10px 50px;
+    color: #a8a8a7;
+    text-decoration: none;
+    margin-right: 15px;
+
+    &:hover {
+      color: #111;
+      background: @main-color;
+      transition: all 0.5s ease;
+    }
+  }
+}
+
+// Introduction
+
+.introduceMe {
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  p:nth-child(2) {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+}
+
+// Work Section
+
+.workSection {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    color: #111;
+  }
+  h6 {
+    font-size: 0.9rem;
+    line-height: 2.2em;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: 0;
+    padding: 0;
+    opacity: 0.5;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .workExample {
+    margin-bottom: 2rem;
+    padding: 12px;
+    background: @main-color;
+    overflow: hidden;
+  }
+  .workExample img {
+    width: 50%;
+  }
+  .demo {
+    margin-top: 1rem;
+    padding: 10px 50px;
+    border: 1px solid #111;
+    background: none;
+  }
+  .demo:hover {
+    transition: all 0.25s ease;
+    background: #111;
+    color: @main-color;
+    cursor: pointer;
+  }
+}
+
+// footer
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
